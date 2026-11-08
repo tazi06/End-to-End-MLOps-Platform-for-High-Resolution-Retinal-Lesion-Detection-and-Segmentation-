@@ -55,6 +55,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Clean Docker build cache
+        run: |
+          docker builder prune --all --force
+          docker image prune --all --force
+
       - name: Build Docker Image
         env:
           IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/retinaops-api:${{ github.sha }}
