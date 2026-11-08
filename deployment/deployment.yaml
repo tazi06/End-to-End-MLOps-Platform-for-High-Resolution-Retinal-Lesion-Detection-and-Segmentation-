@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: retinaops-api
+  labels:
+    app: retinaops-api
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: retinaops-api
+
+  template:
+    metadata:
+      labels:
+        app: retinaops-api
+
+    spec:
+      containers:
+        - name: retinaops-api
+          image: IMAGE_PLACEHOLDER
+
+          ports:
+            - name: http
+              containerPort: 3000
+
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10

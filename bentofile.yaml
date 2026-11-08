@@ -1,0 +1,16 @@
+
+service: "service.service:RetinaOpsService"
+
+include:
+  - "service/*.py"
+  - "models/best.pt"
+
+python:
+  lock_packages: false
+  index_url: "https://download.pytorch.org/whl/cpu"
+  packages:
+    - torch==2.5.1
+    - ultralytics
+    - sahi
+    - numpy
+    - pillow
