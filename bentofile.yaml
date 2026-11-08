@@ -5,6 +5,12 @@ include:
   - "service/*.py"
   - "models/best.pt"
 
+docker:
+  system_packages:
+    - libgl1
+    - libglib2.0-0
+    - libxcb1
+
 python:
   lock_packages: false
   packages:
