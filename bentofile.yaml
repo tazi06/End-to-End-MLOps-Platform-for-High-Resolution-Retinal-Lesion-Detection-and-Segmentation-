@@ -7,7 +7,8 @@ include:
 
 python:
   lock_packages: false
-  index_url: "https://download.pytorch.org/whl/cpu"
+  extra_index_url:
+    - "https://download.pytorch.org/whl/cpu"
   packages:
     - torch==2.5.1
     - ultralytics
