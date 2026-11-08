@@ -8,9 +8,10 @@ include:
 python:
   lock_packages: false
   extra_index_url:
+    - "https://pypi.org/simple"
     - "https://download.pytorch.org/whl/cpu"
   packages:
-    - torch==2.5.1
+    - torch==2.5.1+cpu
     - ultralytics
     - sahi
     - numpy
