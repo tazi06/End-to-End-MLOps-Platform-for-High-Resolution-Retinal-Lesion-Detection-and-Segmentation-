@@ -8,8 +8,9 @@ include:
 python:
   lock_packages: false
   extra_index_url:
-    - "https://pypi.org/simple"
     - "https://download.pytorch.org/whl/cpu"
+    - "https://pypi.org/simple"
+  pip_args: "--index-strategy unsafe-best-match"
   packages:
     - torch==2.5.1+cpu
     - ultralytics
