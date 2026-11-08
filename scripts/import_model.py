@@ -6,7 +6,7 @@ from mlflow import MlflowClient
 
 
 MODEL_NAME = "retinaops-yolo"
-MODEL_VERSION = "1"
+MODEL_VERSION = "4"
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 MODEL_DIR = ROOT_DIR / "models"
